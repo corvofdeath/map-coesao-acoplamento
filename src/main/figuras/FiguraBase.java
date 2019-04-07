@@ -1,5 +1,7 @@
 package main.figuras;
 
+import main.erros.NegativeNumberException;
+
 public abstract class FiguraBase implements Figura {
 
     private final String name;
@@ -7,6 +9,7 @@ public abstract class FiguraBase implements Figura {
     private final int field_value;
 
     public FiguraBase(String name, String field, int value) {
+        if(value < 0) { throw new NegativeNumberException("O valor do " + field + " do " + name + " não pode ser negativo"); }
         this.name = name;
         this.field_name = field;
         this.field_value = value;

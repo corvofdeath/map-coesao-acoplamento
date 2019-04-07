@@ -1,11 +1,14 @@
 package main.figuras;
 
+import main.erros.NegativeNumberException;
+
 public class Retangulo extends FiguraBase {
 
     private final int largura;
 
     public Retangulo(int largura, int altura) {
         super("retangulo", "altura", altura);
+        if(largura < 0) { throw new NegativeNumberException("O valor da " + largura + " do retangulo não pode ser negativa"); }
         this.largura = largura;
     }
 
