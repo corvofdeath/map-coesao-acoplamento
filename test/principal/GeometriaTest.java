@@ -9,7 +9,7 @@ import builders.CirculoBuilder;
 import builders.QuadradoBuilder;
 import builders.RetanguloBuilder;
 import main.Geometria;
-import main.erros.NegativeNumberException;
+import main.erros.NumeroNegativoException;
 import main.figuras.Circulo;
 import main.figuras.Quadrado;
 import main.figuras.Retangulo;
@@ -41,7 +41,7 @@ public class GeometriaTest {
         assertEquals(quadrado.perimetro(), this.quadradoBuilder.perimetro());
     }
     
-    @Test(expected = NegativeNumberException.class)
+    @Test(expected = NumeroNegativoException.class)
     public void testCriarQuadradoException(){
         Quadrado quadrado = Geometria.criarQuadrado(-5);
     }
@@ -53,7 +53,7 @@ public class GeometriaTest {
         assertEquals(retangulo.perimetro(), this.retanguloBuilder.perimetro());
     }
     
-    @Test(expected = NegativeNumberException.class)
+    @Test(expected = NumeroNegativoException.class)
     public void testCriarRetanguloException(){
         Retangulo retangulo = Geometria.criarRetangulo(5, -3);
     }
@@ -65,7 +65,7 @@ public class GeometriaTest {
         assertEquals(circulo.perimetro(), this.circuloBuilder.perimetro());
     }
     
-    @Test(expected = NegativeNumberException.class)
+    @Test(expected = NumeroNegativoException.class)
     public void testCriarCirculoException(){
         Circulo circulo = Geometria.criarCirculo(-5);
     }
